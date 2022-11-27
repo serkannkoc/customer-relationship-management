@@ -1,12 +1,9 @@
 package com.serkan.customerrelationshipmanagement.model
 
 import org.hibernate.annotations.GenericGenerator
-import javax.persistence.FetchType
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.OneToMany
+import javax.persistence.*
 
-
+@Entity
 data class ProductCategory(
     @Id
     @GeneratedValue(generator = "UUID")

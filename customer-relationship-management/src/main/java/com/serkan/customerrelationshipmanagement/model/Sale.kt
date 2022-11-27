@@ -2,7 +2,7 @@ package com.serkan.customerrelationshipmanagement.model
 
 import org.hibernate.annotations.GenericGenerator
 import javax.persistence.*
-
+@Entity
 data class Sale(
     @Id
     @GeneratedValue(generator = "UUID")

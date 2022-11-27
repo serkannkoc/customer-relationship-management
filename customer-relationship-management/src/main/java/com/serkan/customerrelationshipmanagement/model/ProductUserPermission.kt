@@ -2,7 +2,7 @@ package com.serkan.customerrelationshipmanagement.model
 
 import org.hibernate.annotations.GenericGenerator
 import javax.persistence.*
-
+@Entity
 data class ProductUserPermission(
     @Id
     @GeneratedValue(generator = "UUID")

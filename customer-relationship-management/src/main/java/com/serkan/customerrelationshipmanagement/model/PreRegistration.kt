@@ -2,9 +2,10 @@ package com.serkan.customerrelationshipmanagement.model
 
 import org.hibernate.annotations.GenericGenerator
 import java.time.LocalDateTime
+import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
-
+@Entity
 data class PreRegistration(
     @Id
     @GeneratedValue(generator = "UUID")

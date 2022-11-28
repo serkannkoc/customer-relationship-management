@@ -20,7 +20,8 @@ public class CustomerRelationshipManagementApplication implements CommandLineRun
 
 	@Override
 	public void run(String... args) {
-		User user = userRepository.save(new User("1",null,"serkan@gmail.com","password123",null)) ;
+		System.out.println("xx dog");
+		User user = userRepository.save(new User("",null,"serkan@gmail.com","password123",null)) ;
 		System.out.println(user);
 	}
 }

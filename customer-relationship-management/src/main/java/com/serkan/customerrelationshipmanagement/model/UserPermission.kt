@@ -9,7 +9,7 @@ data class UserPermission(
     val id: Int,
     val type: Type?,
 
-    @OneToMany(mappedBy = "user_permission", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userPermission", fetch = FetchType.EAGER)
     val productUserPermission: Set<ProductUserPermission>
 ) {
     override fun equals(other: Any?): Boolean {

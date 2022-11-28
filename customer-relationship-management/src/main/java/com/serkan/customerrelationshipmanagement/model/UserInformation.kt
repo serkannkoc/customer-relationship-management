@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
+import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 
 @Entity
@@ -12,10 +13,9 @@ data class UserInformation(
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
-
-    @OneToOne(mappedBy = "user_information")
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     val user: User,
-
     val name: String?,
     val surname: String?,
     val country: String?,

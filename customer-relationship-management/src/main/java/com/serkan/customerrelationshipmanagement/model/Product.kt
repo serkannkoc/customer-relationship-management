@@ -10,18 +10,18 @@ data class Product(
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
-    @OneToOne(cascade = [CascadeType.ALL])
-    @JoinColumn(name = "product_detail_id", referencedColumnName = "id")
+    @OneToOne
+    @JoinColumn(name = "product_detail_id")
     val productDetail: ProductDetail?,
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = [CascadeType.ALL] )
-    @JoinColumn(name = "product_category_id",  nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "product_category_id", referencedColumnName = "id")
     val productCategory: ProductCategory?,
     val price: BigDecimal?,
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "product")
     val sales: Set<Sale>,
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "product")
     val productUserPermission: Set<ProductUserPermission>
 
 

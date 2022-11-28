@@ -8,19 +8,19 @@ import javax.persistence.*
 
 
 @Entity
+@Table(name = "users")
 data class User(
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
-    @OneToOne(cascade = [CascadeType.ALL])
-    @JoinColumn(name = "user_information_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "user")
     val userInformation: UserInformation?,
     val email: String?,
     val password: String?,
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
-    val sales: Set<Sale>
+    val sales: Set<Sale>?
 ) {
 
     override fun equals(other: Any?): Boolean {

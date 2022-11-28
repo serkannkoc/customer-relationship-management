@@ -10,8 +10,8 @@ data class ProductCategory(
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
     val name: String?,
-    @OneToMany(mappedBy = "product_category", fetch = FetchType.EAGER)
-    val products: Set<Product>
+    @OneToMany(mappedBy = "productCategory")
+    val products: List<Product>
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

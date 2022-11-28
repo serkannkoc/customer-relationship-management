@@ -13,7 +13,7 @@ data class ProductDetail(
     val id: String?,
     val name: String?,
     val description: String?,
-    @OneToOne(mappedBy = "product_detail")
+    @OneToOne(mappedBy = "productDetail")
     val product: Product
 ) {
     override fun equals(other: Any?): Boolean {
